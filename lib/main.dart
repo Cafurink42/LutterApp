@@ -4,19 +4,20 @@ void main() {
   runApp(PerguntaApp());
 }
 
-class PerguntaAppState extends State<PerguntaApp> {
+class _PerguntaAppState extends State<PerguntaApp> {
   //controlar o estado do componente
-  var perguntaSelecionada = 0;
+  var _perguntaSelecionada = 0;
 
   //método responder
-  void responder() {
+  void _responder() {
+    // deixei também o método responder privado
     /* Passei para o setState o que será modificado na view e ele 
     vai redenderizar novamente sempre a última modificação.*/
     setState(() {
-      perguntaSelecionada++;
+      _perguntaSelecionada++;
     });
 
-    print(perguntaSelecionada);
+    print(_perguntaSelecionada);
   }
 
   //arvore de componentes
@@ -25,7 +26,8 @@ class PerguntaAppState extends State<PerguntaApp> {
     //função build
     final perguntas = [
       'Qual é a sua cor favorita?',
-      'Qual é o seu animal favorito?'
+      'Qual é o seu animal favorito?',
+      'Qual é o seu cachoro preferido?'
     ];
     return MaterialApp(
       home: Scaffold(
@@ -36,24 +38,24 @@ class PerguntaAppState extends State<PerguntaApp> {
           //Componente Column
           children: <Widget>[
             //Atributo Children
-            Text(perguntas.elementAt(perguntaSelecionada)),
+            Text(perguntas.elementAt(_perguntaSelecionada)),
             ElevatedButton(
               child: Text('Resposta 1'),
-              onPressed: responder, //método responder
+              onPressed: _responder, //método responder
             ),
             SizedBox(
               height: 10.0,
             ),
             ElevatedButton(
               child: Text('Resposta 2'),
-              onPressed: responder,
+              onPressed: _responder,
             ),
             SizedBox(
               height: 10.0,
             ),
             ElevatedButton(
               child: Text('Resposta 3'),
-              onPressed: responder,
+              onPressed: _responder,
             ),
             SizedBox(
               height: 10.0,
@@ -66,7 +68,7 @@ class PerguntaAppState extends State<PerguntaApp> {
 }
 
 class PerguntaApp extends StatefulWidget {
-  PerguntaAppState createState() {
-    return PerguntaAppState();
+  _PerguntaAppState createState() {
+    return _PerguntaAppState(); //estados privados
   }
 }
