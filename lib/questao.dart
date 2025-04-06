@@ -8,19 +8,15 @@ class Questao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        margin: EdgeInsets.all(10), // margin 10px em todos os cantos
-        child: Text(
-          texto,
-          style: TextStyle(fontSize: 28),
-          textAlign: TextAlign.center,
-        ));
+      width: double.infinity,
+      margin: EdgeInsets.all(10), // margin 10px em todos os cantos
+    );
   }
 }
 
 
-//criar um componente chamado resposta.dart
-//criar um componente stateles dentro do resposta.dart
+//criar um componente chamado resposta.dart ##ok##
+//criar um componente stateles dentro do resposta.dart ##ok##
 //criar um construtor que irá receber um texto que será o valor que irá colocar dentro do botão
 /**
  passar o componente criado como parâmetro para esse componente:
